@@ -26,7 +26,7 @@
                 </div>
             </div>
             <!-- 投稿の本文 -->
-            <div class="form-group">
+            <div class="form-group mb-4">
                 質問内容
                 <div class="col-sm-6">
                     <input type="text" name="desc" class="form-control">
