@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                <a href={{asset('/questions')}}>Questions</a>
+                <a href={{asset('/questions')}}>Questions登録</a>
                 </div>
             </div>
         </div>
