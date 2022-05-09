@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="row">
-    <div class="card-body mb-2 ml-4">
+    <div class="card-body mb-2 ml-4 w-50">
     @include('common.errors')
         <form action="{{ url('questions/update') }}" method="POST">
             <!-- item_name -->
