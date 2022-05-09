@@ -47,6 +47,16 @@
                                 <td class="table-text">
                                     <div>{{ $question->desc }}</div>
                                 </td>
+                                <td>
+	                                <form action="{{ url('questionsdetail/'.$question->id) }}" method="GET"> {{ csrf_field() }}
+	                                    <button type="submit" class="btn btn-primary">detail</button>
+	                                </form>
+                                </td>
+                                <td>
+	                                <form action="{{ url('questionsedit/'.$question->id) }}" method="GET"> {{ csrf_field() }}
+	                                    <button type="submit" class="btn btn-primary">edit</button>
+	                                </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

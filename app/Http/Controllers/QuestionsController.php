@@ -80,9 +80,14 @@ class QuestionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function detail(Question $question)
     {
-        //
+        return view('questionsdetail',compact('question'));
+    }
+    
+    public function edit(Question $question)
+    {
+        return view('questionsedit',compact('question'));
     }
 
     /**
