@@ -4,9 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
+            <div class="card bg-light">
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -27,7 +25,7 @@
                 <table class="table table-striped task-table">
                     <!-- テーブルヘッダ -->
                     <thead>
-                        <th>質問一覧</th>
+                        <th class="w-25"><h6>Questions</h6></th>
                         <th>&nbsp;</th>
                     </thead>
                     <!-- テーブル本体 -->
