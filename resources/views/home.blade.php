@@ -36,10 +36,10 @@
             <div class="card-body">
                 <h6 class="w-25">Posted Questions</h6>
                 @foreach ($questions as $question)
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-header d-flex justify-content-between p-2">
                         <div class="p-1">{{ $question->id.": " }}{{ $question->title }}
-                            <span class="bg-white text-dark bg-gradient border border-darkrounded scrollto p-1 w-25 ml-1">{{ $question->category }}</span>
+                            <span class="bg-white text-dark bg-gradient border border-dark rounded scrollto p-1 w-25 ml-1">{{ $question->category }}</span>
                         </div>
                         <div class="card-body d-flex p-1 ml-2 justify-content-end" style="gap:20px;">
 	                         <div>
@@ -58,8 +58,9 @@
                         <div class="card-body p-1 ml-2 mb-4">
                             <div>{{ $question->desc }}</div>
                         </div>
-                @endforeach
                 </div>
+                <p></p>
+                @endforeach
             </div>
         </div>		
     @endif
