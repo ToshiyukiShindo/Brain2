@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<div class="row">
-    <div class="card-body mb-2">
+<div class="row m-auto pl-4">
+    <div class="card-body p-4">
     @include('common.errors')
         <form action="{{ url('questions/update') }}" method="POST">
             <!-- item_name -->
@@ -19,7 +19,7 @@
             </div>
             <!-- Save ボタン/Back ボタン -->
             <div class="well well-sm">
-                <a class="btn btn-link pull-right" href="{{ url('/home') }}"> Back</a>
+                <a class="btn btn-secondary btn-sm btn-norounded scrollto" href="{{ url('/home') }}"> Back</a>
             </div>
             <!-- CSRF -->
             {{ csrf_field() }}
@@ -27,7 +27,8 @@
         </form>
     </div>
 </div>
+    <hr class="m-1">
 
-//chat機能を追加
+    //chat機能を追加
 
 @endsection

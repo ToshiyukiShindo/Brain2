@@ -36,8 +36,8 @@
     <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
 </head>
 <body>
-    <div id="app site-header header-classic-navigation header-classic-mobile-fixed">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm header-base style-light">
+    <div id="app site-header header-overlay-navigation sticky-top">
+        <nav class="navbar navbar-expand-md navbar-light bg-white header-base style-light">
             <div class="container header-brand">
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ 'Brain' }}
@@ -96,7 +96,7 @@
 			<div class="overlay-inner bg-dark opacity-50"></div>
 		</div>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>
