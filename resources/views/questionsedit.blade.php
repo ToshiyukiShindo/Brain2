@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="row">
-    <div class="card-body mb-2">
+    <div class="card-body mb-2 bg-light text-dark">
     @include('common.errors')
         <form action="{{ url('questions/update') }}" method="POST">
             <!-- item_name -->
@@ -20,7 +19,7 @@
             <!-- Save ボタン/Back ボタン -->
             <div class="well well-sm">
                 <button type="submit" class="btn btn-secondary btn-sm btn-norounded scrollto">Save</button>
-                <a class="btn btn-secondary btn-sm btn-norounded scrollto" href="{{ url('/questions') }}"> Back</a>
+                <a class="btn btn-secondary btn-sm btn-norounded scrollto" href="{{ url('/home') }}"> Back</a>
             </div>
             <!--/ Save ボタン/Back ボタン -->
             <!-- id 値を送信 -->
@@ -30,5 +29,4 @@
             <!--/ CSRF -->
         </form>
     </div>
-</div>
 @endsection

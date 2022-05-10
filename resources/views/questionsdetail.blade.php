@@ -31,7 +31,7 @@
     <hr class="m-1 border-4 color-black">
     <div class="m-4">
         <h5 class="ml-4 text-3xl font-bold">{{'Answer & chats'}}</h5>
-        <form class="my-2 px-2 rounded-lg bg-gray-300 text-sm flex flex-col md:flex-row flex-grow" action="/chat" method="POST">
+        <form class="my-2 px-2 rounded-lg bg-gray-300 text-sm flex flex-col md:flex-row flex-grow" action="{{ url('chats') }}" method="POST">
             @csrf
             <input type="hidden" name="user_identifier" value="test">
             <input class="py-1 px-2 rounded text-center flex-initial w-25" type="text" name="question_id" maxlength="30" value="">
@@ -42,11 +42,11 @@
 
         <div class="my-2 p-2 rounded-lg card-body">
             <ul>
-                @foreach($messages as $message)
+                @foreach($chats as $chat)
                     <hr>
-                    <p class="text-xs text-left">{{$message->created_at}} ＠{{$message->user_name}}</p>
-                    <li class="w-75 mb-3 p-2 rounded-lg bg-white text-dark relative @if($message->user_name == Auth::user()->name) self @else other @endif" style="list-style:none;">
-                        {{$message->message}}
+                    <p class="text-xs text-left">{{$chat->created_at}} ＠{{$chat->user_name}}</p>
+                    <li class="w-75 mb-3 p-2 rounded-lg bg-white text-dark relative @if($chat->user_name == Auth::user()->name) self @else other @endif" style="list-style:none;">
+                        {{$chat->message}}
                     </li>
                 @endforeach
             </ul>

@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
     <!-- Bootstrapの定形コード… -->
-    <div class="card-body mb-2 ">
+    <div class="card-body mb-2 bg-light text-dark">
+
         <div class="card-title w-25">
             質問登録
         </div>

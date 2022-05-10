@@ -26,9 +26,9 @@ class QuestionsController extends Controller
         
         // 表示する件数を代入
         $display = 15;
-        $messages = Chat::latest()->limit($display)->get();
+        $chats = Chat::latest()->limit($display)->get();
         
-        return view('questions',compact('questions','messages','length','display'));
+        return view('questions',compact('questions','chats','length','display'));
     }
 
     /**
@@ -92,7 +92,16 @@ class QuestionsController extends Controller
      */
     public function detail(Question $question)
     {
-        return view('questionsdetail',compact('question'));
+        $questions = Question::get();
+        
+        // データーベースの件数を取得
+        $length = Chat::all()->count();
+        
+        // 表示する件数を代入
+        $display = 10;
+        $chats = Chat::latest()->limit($display)->get();
+        
+        return view('questionsdetail',compact('question','length','display','chats'));
     }
     
     public function edit(Question $question)

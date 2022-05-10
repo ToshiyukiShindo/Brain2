@@ -37,7 +37,7 @@
 </head>
 <body>
     <div id="app site-header header-overlay-navigation sticky-top">
-        <nav class="navbar navbar-expand-md navbar-light bg-white header-base style-light">
+        <nav class="navbar navbar-expand-md navbar-light bg-light header-base style-light">
             <div class="container header-brand">
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ 'Brain' }}
