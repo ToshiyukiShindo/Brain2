@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\ChatsController;//追記
 use App\Models\User;
 use App\Models\Question;
+use App\Models\Chat;
 use Auth;
 use Validator;
 

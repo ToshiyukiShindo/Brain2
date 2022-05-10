@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuestionsController;
+use App\Http\Controllers\ChatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::get('/questionsdetail/{questions}',[QuestionsController::class, 'detail']
 Route::get('/questionsedit/{questions}',[QuestionsController::class, 'edit']);
 //更新処理
 Route::post('/questions/update',[QuestionsController::class, 'update']);
-//本を削除
+//削除
 Route::delete('/question/{question}',[QuestionsController::class, 'destroy']);
 
+//chatの投稿
+Route::post('/chat', [ChatsController::class, 'store']);

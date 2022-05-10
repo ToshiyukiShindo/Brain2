@@ -29,14 +29,14 @@
             <div class="form-group mb-4">
                 質問内容
                 <div class="col-sm-6">
-                    <input type="text" name="desc" class="form-control">
+                    <textarea type="text" name="desc" class="form-control" rows="3"></textarea>
                 </div>
             </div>
             <!--　登録ボタン -->
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
-                    <button type="submit" class="btn btn-primary">
-                        Save
+                    <button type="submit" class="btn btn-secondary btn-sm btn-norounded scrollto">
+                        Post
                     </button>
                 </div>
             </div>

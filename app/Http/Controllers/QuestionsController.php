@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\ChatsController;//追記
 use App\Models\User;
 use App\Models\Question;
+use App\Models\Chat;
 use Auth;
 use Validator;
 
@@ -18,7 +20,15 @@ class QuestionsController extends Controller
     public function index()
     {
         $questions = Question::get();
-        return view('questions',compact('questions'));
+        
+        // データーベースの件数を取得
+        $length = Chat::all()->count();
+        
+        // 表示する件数を代入
+        $display = 15;
+        $messages = Chat::latest()->limit($display)->get();
+        
+        return view('questions',compact('questions','messages','length','display'));
     }
 
     /**

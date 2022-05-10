@@ -34,30 +34,30 @@
      @if (count($questions) > 0)
         <div class="card-body">
             <div class="card-body">
-                <h6 class="w-25">Poseted Questions</h6>
+                <h6 class="w-25">Posted Questions</h6>
                 @foreach ($questions as $question)
                 <div class="card">
-                        <div class="card-header">
-                            <div>{{ $question->id.": " }}{{ $question->title }}</div>
+                    <div class="card-header d-flex justify-content-between p-2">
+                        <div class="p-1">{{ $question->id.": " }}{{ $question->title }}
+                            <span class="bg-white text-dark bg-gradient border border-darkrounded scrollto p-1 w-25 ml-1">{{ $question->category }}</span>
                         </div>
-                        <div class="card-body p-2 ml-2">
-                            <div>{{ $question->category }}</div>
+                        <div class="card-body d-flex p-1 ml-2 justify-content-end" style="gap:20px;">
+	                         <div>
+	                        <form action="{{ url('questionsdetail/'.$question->id) }}" method="GET"> {{ csrf_field() }}
+	                            <button type="submit" class="btn btn-secondary btn-sm btn-norounded scrollto py-0 px-1 my-0">detail</button>
+	                        </form>
+	                        </div>
+	                        <div>
+	                        <form action="{{ url('questionsedit/'.$question->id) }}" method="GET"> {{ csrf_field() }}
+	                            <button type="submit" class="btn btn-secondary btn-sm btn-norounded scrollto py-0 px-1 my-0">edit</button>
+	                        </form>
+	                        </div>
+	                    </div>
+
                         </div>
-                        <div class="card-body p-2 ml-2">
+                        <div class="card-body p-1 ml-2 mb-4">
                             <div>{{ $question->desc }}</div>
                         </div>
-                        <div class="card-body d-flex p-2 ml-2" style="gap:20px;">
-	                       <div>
-	                       <form action="{{ url('questionsdetail/'.$question->id) }}" method="GET"> {{ csrf_field() }}
-	                           <button type="submit" class="btn btn-secondary btn-sm btn-norounded scrollto">detail</button>
-	                       </form>
-	                       </div>
-	                       <div>
-	                       <form action="{{ url('questionsedit/'.$question->id) }}" method="GET"> {{ csrf_field() }}
-	                           <button type="submit" class="btn btn-secondary btn-sm btn-norounded scrollto">edit</button>
-	                       </form>
-	                       </div>
-	                   </div>
                 @endforeach
                 </div>
             </div>

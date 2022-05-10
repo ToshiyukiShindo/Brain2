@@ -15,12 +15,12 @@
             </div>
             <div class="form-group">
                 <label for="desc">質問内容</label>
-                <input type="text" name="desc" class="form-control col-sm-6" value="{{$question->desc}}">
+                <textarea type="text" name="desc" class="form-control col-sm-6" value="{{$question->desc}}" row="3"></textarea>
             </div>
             <!-- Save ボタン/Back ボタン -->
             <div class="well well-sm">
-                <button type="submit" class="btn btn-primary">Save</button>
-                <a class="btn btn-link pull-right" href="{{ url('/questions') }}"> Back</a>
+                <button type="submit" class="btn btn-secondary btn-sm btn-norounded scrollto">Save</button>
+                <a class="btn btn-secondary btn-sm btn-norounded scrollto" href="{{ url('/questions') }}"> Back</a>
             </div>
             <!--/ Save ボタン/Back ボタン -->
             <!-- id 値を送信 -->
