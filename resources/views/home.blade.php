@@ -14,7 +14,7 @@
     </div>
 
     <div class="w-75 opacity-80 m-auto">
-        <div class="col-md-6">
+        <div class="col-md-6 m-auto">
             <div class="card bg-white p-2">
                 <div class="card-body p-2 align-self-md-center text-center">
                     @if (session('status'))
@@ -23,7 +23,7 @@
                         </div>
                     @endif
 
-                <a class="btn btn-white btn-sm btn-norounded scrollto" href={{asset('/questions')}}>Questions登録</a>
+                <div><a class="btn btn-white btn-sm btn-norounded scrollto" href={{asset('/questions')}}>Questions登録</a></div>
                 </div>
             </div>
         </div>

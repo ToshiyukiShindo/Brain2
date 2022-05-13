@@ -36,9 +36,9 @@
     <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
 </head>
 <body>
-    <div id="app site-header header-overlay-navigation sticky-top">
+    <div id="app sticky-top">
         <nav class="navbar navbar-expand-md navbar-light bg-light header-base style-light">
-            <div class="container header-brand">
+            <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ 'Brain' }}
                 </a>
