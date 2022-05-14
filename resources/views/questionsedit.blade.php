@@ -9,6 +9,10 @@
                 <label for="title">タイトル</label>
                 <input type="text" name="title" class="form-control col-sm-6" value="{{$question->title}}">
             </div>
+            <div class="form-group" hidden>
+                <label for="title">ID</label>
+                <input type="text" name="id" class="form-control col-sm-6" value="{{$question->id}}">
+            </div>
             <div class="form-group">
                 <label for="category">カテゴリ</label>
                 <input type="text" name="category" class="form-control col-sm-6" value="{{$question->category}}">

@@ -4421,3 +4421,13 @@ readers do not read off random characters that represent icons */
 .fas {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
+
+.hover{
+  transition: opacity 1s;
+  transition: transform 1s;
+}
+
+.hover:hover{
+  opacity: 0.9;
+  transform: scale(1.01, 1.01);
+}

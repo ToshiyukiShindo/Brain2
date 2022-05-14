@@ -25,6 +25,7 @@
 		<link rel="stylesheet" href="{{asset('css/slick.min.css')}}" type="text/css">
 		<link rel="stylesheet" href="{{asset('css/vegas.min.css')}}" type="text/css">
 		<link rel="stylesheet" href="{{asset('css/magnific-popup.min.css')}}" type="text/css">
+		<link rel="stylesheet" href="{{asset('css/all.css')}}" type="text/css">
 		<link rel="stylesheet" href="{{asset('css/all.min.css')}}" type="text/css">
 		<link rel="stylesheet" href="{{asset('css/themify-icons.css')}}" type="text/css">
 

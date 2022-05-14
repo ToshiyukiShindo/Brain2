@@ -147,12 +147,13 @@ class QuestionsController extends Controller
             
             // Eloquent モデル
             $questions = Question::find($request->id);
+            $questions->id = $request->id;
             $questions->title = $request->title;
             $questions->category = $request->category;
             $questions->desc = $request->desc;
             $questions->updated_at = date_create($request->date);
             $questions->save(); 
-            return redirect('/');
+            return redirect('/back');
     }
 
     /**
