@@ -29,15 +29,7 @@ return new class extends Migration
             // テーブルが存在していればリターン
             return;
         };
-        if (Schema::hasTable('questions')) {
-            // テーブルが存在していればリターン
-            return;
-        };
-        if (Schema::hasTable('chats')) {
-            // テーブルが存在していればリターン
-            return;
-        };
-        
+
         Schema::create('chats', function (Blueprint $table) {
         $table->bigIncrements('id');
         $table->string('question_id', 20)->nullable()->default(null);
