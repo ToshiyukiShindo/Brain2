@@ -28,13 +28,18 @@ Route::get('/questions', [QuestionsController::class, 'index']);
 //questionsの投稿処理
 Route::post('questions', [QuestionsController::class, 'store']);
 //詳細画面への遷移
-Route::get('/questionsdetail/{questions}',[QuestionsController::class, 'detail']);
+Route::get('/questionsdetail/{question}',[QuestionsController::class, 'detail']);
+//chat画面への遷移
+Route::get('/questionschat/{question}',[QuestionsController::class, 'chat']);
 //更新画面
-Route::get('/questionsedit/{questions}',[QuestionsController::class, 'edit']);
+Route::get('/questionsedit/{question}',[QuestionsController::class, 'edit']);
 //更新処理
 Route::post('/questions/update',[QuestionsController::class, 'update']);
 //削除
 Route::delete('/question/{question}',[QuestionsController::class, 'destroy']);
 
 //chatの投稿
-Route::post('chats', [ChatsController::class, 'store']);
+Route::post('questionschat/{question}', [ChatsController::class, 'store']);
+
+//back
+Route::get('/back', [App\Http\Controllers\HomeController::class, 'back']);

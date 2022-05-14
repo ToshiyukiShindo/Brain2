@@ -70,7 +70,7 @@ class QuestionsController extends Controller
         $questions->user_id = Auth::id();//ここでログインしているユーザidを登録しています
         $questions->save();
         
-        return redirect('/questions');
+        return redirect('/back');
     }
 
     /**
@@ -93,15 +93,31 @@ class QuestionsController extends Controller
     public function detail(Question $question)
     {
         $questions = Question::get();
+        $detail = Question::where('id',$question->id)->get();
         
         // データーベースの件数を取得
         $length = Chat::all()->count();
         
         // 表示する件数を代入
         $display = 10;
-        $chats = Chat::latest()->limit($display)->get();
+        $chats = Chat::where('question_id',$question->id)->latest()->limit($display)->get();
         
-        return view('questionsdetail',compact('question','length','display','chats'));
+        return view('questionsdetail',compact('questions','question','length','display','chats','detail'));
+    }
+    
+    public function chat(Question $question)
+    {
+        $questions = Question::get();
+        $detail = Question::where('id',$question->id)->get();
+        $question = $question->id;
+        // データーベースの件数を取得
+        $length = Chat::all()->count();
+        
+        // 表示する件数を代入
+        $display = 10;
+        $chats = Chat::where('question_id',$question)->latest()->limit($display)->get();
+        $messages = Chat::where('question_id',$question)->latest()->limit($display)->get();
+        return view('questionschat',compact('messages','questions','question','length','display','chats','detail'));
     }
     
     public function edit(Question $question)
@@ -116,9 +132,27 @@ class QuestionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+            //バリデーション
+            $validator = Validator::make($request->all(), [
+            'title' => 'required|max:255',
+    ]);
+            //バリデーション:エラー 
+            if ($validator->fails()) {
+                return redirect('/home')
+                ->withInput()
+                ->withErrors($validator);
+            }
+            
+            // Eloquent モデル
+            $questions = Question::find($request->id);
+            $questions->title = $request->title;
+            $questions->category = $request->category;
+            $questions->desc = $request->desc;
+            $questions->updated_at = date_create($request->date);
+            $questions->save(); 
+            return redirect('/');
     }
 
     /**

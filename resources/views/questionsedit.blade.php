@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="card-body mb-2 bg-light text-dark">
+    <div style="margin-left:35px;margin-right:35px;">
     @include('common.errors')
         <form action="{{ url('questions/update') }}" method="POST">
             <!-- item_name -->
@@ -14,7 +15,7 @@
             </div>
             <div class="form-group">
                 <label for="desc">質問内容</label>
-                <textarea type="text" name="desc" class="form-control col-sm-6" value="{{$question->desc}}" row="3"></textarea>
+                <input type="text" name="desc" class="form-control col-sm-12" value="{{$question->desc}}">
             </div>
             <!-- Save ボタン/Back ボタン -->
             <div class="well well-sm">
@@ -28,5 +29,6 @@
             {{ csrf_field() }}
             <!--/ CSRF -->
         </form>
+        </div>
     </div>
 @endsection

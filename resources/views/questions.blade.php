@@ -2,7 +2,7 @@
 @section('content')
     <!-- Bootstrapの定形コード… -->
     <div class="card-body mb-2 bg-light text-dark">
-
+    <div style="margin-left:35px;margin-right:35px;">
         <div class="card-title w-25">
             質問登録
         </div>
@@ -42,7 +42,8 @@
                 </div>
             </div>
         </form>
-        @endif    
+        @endif
+        </div>
     </div>
     
 @endsection

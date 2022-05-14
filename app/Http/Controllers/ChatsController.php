@@ -44,12 +44,14 @@ class ChatsController extends Controller
     {
         $chats = new Chat;
         $chats->user_id = $request->user_id;
+        $chats->question_id = $request->question_id;
         $chats->user_name = $request->user_name;
         $chats->message = $request->message;
         $chats->save();
-        $display = 15;
-        $messages = Chat::latest()->limit($display)->get();
-        return view('/questionsdetail',compact('chats','messages','display'));
+        $question = $request->get('id');
+        $display = 10;
+        $messages = Chat::where('question_id',$question)->latest()->limit($display)->get();
+        return view('/back',compact('question','chats','messages','display'));
     }
 
     /**

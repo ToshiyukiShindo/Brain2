@@ -29,7 +29,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $questions = Question::get();
+        $questions = Question::latest('updated_at')->where('user_id',Auth::user()->id)->take(5)->get();
         return view('home',compact('questions'));
+    }
+    
+    public function back()
+    {
+        return view('back');
     }
 }
