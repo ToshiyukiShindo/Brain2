@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    
     /**
      * Run the migrations.
      *
@@ -13,6 +14,24 @@ return new class extends Migration
      */
     public function up()
     {
+            if (Schema::hasTable('users')) {
+            // テーブルが存在していればリターン
+            return;
+        };
+        if (Schema::hasTable('password_resets')) {
+            // テーブルが存在していればリターン
+            return;
+        };
+        if (Schema::hasTable('failed_jobs')) {
+            // テーブルが存在していればリターン
+            return;
+        };
+        if (Schema::hasTable('personal_access_tokens')) {
+            // テーブルが存在していればリターン
+            return;
+        };
+
+        
         Schema::create('password_resets', function (Blueprint $table) {
             $table->string('email')->index();
             $table->string('token');

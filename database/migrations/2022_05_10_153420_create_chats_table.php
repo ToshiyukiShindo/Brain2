@@ -13,6 +13,31 @@ return new class extends Migration
      */
     public function up()
     {
+        if (Schema::hasTable('users')) {
+            // テーブルが存在していればリターン
+            return;
+        };
+        if (Schema::hasTable('password_resets')) {
+            // テーブルが存在していればリターン
+            return;
+        };
+        if (Schema::hasTable('failed_jobs')) {
+            // テーブルが存在していればリターン
+            return;
+        };
+        if (Schema::hasTable('personal_access_tokens')) {
+            // テーブルが存在していればリターン
+            return;
+        };
+        if (Schema::hasTable('questions')) {
+            // テーブルが存在していればリターン
+            return;
+        };
+        if (Schema::hasTable('chats')) {
+            // テーブルが存在していればリターン
+            return;
+        };
+        
         Schema::create('chats', function (Blueprint $table) {
         $table->bigIncrements('id');
         $table->string('question_id', 20)->nullable()->default(null);
