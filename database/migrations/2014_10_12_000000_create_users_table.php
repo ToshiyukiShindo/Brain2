@@ -17,18 +17,6 @@ return new class extends Migration
             // テーブルが存在していればリターン
             return;
         };
-        if (Schema::hasTable('password_resets')) {
-            // テーブルが存在していればリターン
-            return;
-        };
-        if (Schema::hasTable('failed_jobs')) {
-            // テーブルが存在していればリターン
-            return;
-        };
-        if (Schema::hasTable('personal_access_tokens')) {
-            // テーブルが存在していればリターン
-            return;
-        };
         
         Schema::create('users', function (Blueprint $table) {
             $table->id();
