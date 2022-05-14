@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QuestionsController;
 use App\Http\Controllers\ChatsController;
 
@@ -22,6 +23,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//mypage
+//更新画面
+Route::get('/useredit',[HomeController::class, 'edit']);
+//更新処理
+Route::post('/useredit/update',[HomeController::class, 'update']);
+
 
 //questionsの投稿画面
 Route::get('/questions', [QuestionsController::class, 'index']);
