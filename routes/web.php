@@ -39,7 +39,7 @@ Route::post('/questions/update',[QuestionsController::class, 'update']);
 Route::delete('/question/{question}',[QuestionsController::class, 'destroy']);
 
 //chatの投稿
-Route::post('questionschat/{question}', [ChatsController::class, 'store']);
+Route::post('back', [ChatsController::class, 'store']);
 
 //back
 Route::get('/back', [App\Http\Controllers\HomeController::class, 'back']);

@@ -3,7 +3,7 @@
 <div class="row m-auto pl-4 bg-secondary.bg-gradient opacity-70"></div>
     <h5 class="m-4 text-3xl font-bold">{{'Answer & chats'}}{{' @ Question:'.$question}}</h5>
     <div class="mx-4 my-1">
-        <form class="my-2 px-2 rounded-lg bg-gray-300 text-sm flex flex-col md:flex-row flex-grow" action="{{ url('questionschat') }}" method="POST">
+        <form class="my-2 px-2 rounded-lg bg-gray-300 text-sm flex flex-col md:flex-row flex-grow" action="{{ url('back') }}" method="POST">
             @csrf
             <input type="hidden" name="user_identifier" value="test">
             <input class="py-1 px-2 rounded text-center flex-initial w-25" type="text" name="user_id" maxlength="30" value="{{Auth::user()->id}}" hidden>
